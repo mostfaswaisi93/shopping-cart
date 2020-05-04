@@ -25,4 +25,5 @@ Route::get('/store', 'HomeController@store')->name('store');
 Route::get('/products', 'ProductController@index')->name('product.index');
 Route::get('/addToCart/{product}', 'ProductController@addToCart')->name('cart.add');
 Route::get('/shopping-cart', 'ProductController@showCart')->name('cart.show');
-
+Route::get('/checkout/{amount}', 'ProductController@checkout')->name('cart.checkout');
+Route::post('/charge', 'ProductController@charge')->name('cart.charge');
