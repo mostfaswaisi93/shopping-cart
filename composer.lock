@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0dcbdc80776ca79d6311b8f92c5a4b5",
+    "content-hash": "aaf1143ed4dd3a06a073c5390180b25b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -103,6 +103,122 @@
                 "math"
             ],
             "time": "2020-04-15T15:59:35+00:00"
+        },
+        {
+            "name": "cartalyst/stripe",
+            "version": "v2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cartalyst/stripe.git",
+                "reference": "f7753a8c947aa7c58abad96db8714e1594160b0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/stripe/zipball/f7753a8c947aa7c58abad96db8714e1594160b0c",
+                "reference": "f7753a8c947aa7c58abad96db8714e1594160b0c",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "2.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cartalyst\\Stripe\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
+                }
+            ],
+            "description": "A comprehensive Stripe API package.",
+            "keywords": [
+                "cartalyst",
+                "php",
+                "stripe"
+            ],
+            "time": "2020-01-03T12:02:51+00:00"
+        },
+        {
+            "name": "cartalyst/stripe-laravel",
+            "version": "v12.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cartalyst/stripe-laravel.git",
+                "reference": "e171e6721e3491daa7eaa8d85ca6d4536086c327"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/stripe-laravel/zipball/e171e6721e3491daa7eaa8d85ca6d4536086c327",
+                "reference": "e171e6721e3491daa7eaa8d85ca6d4536086c327",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/stripe": "^2.0",
+                "illuminate/support": "^7.0",
+                "php": "^7.2.5"
+            },
+            "require-dev": {
+                "cartalyst/php-cs-fixer-config": "^1.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "component": "implementation",
+                "branch-alias": {
+                    "dev-master": "12.0.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Cartalyst\\Stripe\\Laravel\\StripeServiceProvider"
+                    ],
+                    "aliases": {
+                        "Stripe": "Cartalyst\\Stripe\\Laravel\\Facades\\Stripe"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cartalyst\\Stripe\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
+                }
+            ],
+            "description": "Laravel 7 integration for the Cartalyst Stripe package.",
+            "keywords": [
+                "cartalyst",
+                "laravel",
+                "php",
+                "stripe"
+            ],
+            "time": "2020-03-03T18:50:48+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1932,6 +2048,72 @@
                 "uuid"
             ],
             "time": "2020-03-29T20:13:32+00:00"
+        },
+        {
+            "name": "realrashid/sweet-alert",
+            "version": "v3.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/realrashid/sweet-alert.git",
+                "reference": "d78f0ff7a9e065da2c79fa1c35a5fe243ae9bb02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/d78f0ff7a9e065da2c79fa1c35a5fe243ae9bb02",
+                "reference": "d78f0ff7a9e065da2c79fa1c35a5fe243ae9bb02",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.4|^6.0|^7.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "symfony/thanks": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RealRashid\\SweetAlert\\SweetAlertServiceProvider"
+                    ],
+                    "aliases": {
+                        "Alert": "RealRashid\\SweetAlert\\Facades\\Alert"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RealRashid\\SweetAlert\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rashid Ali",
+                    "email": "realrashid05@gmail.com",
+                    "homepage": "https://realrashid.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A BEAUTIFUL, RESPONSIVE, CUSTOMIZABLE, ACCESSIBLE (WAI-ARIA) REPLACEMENT FOR JAVASCRIPT'S POPUP BOXES FOR LARAVEL BY RASHID ALI",
+            "homepage": "https://github.com/realrashid/sweet-alert",
+            "keywords": [
+                "alert",
+                "laravel",
+                "laravel-package",
+                "notifier",
+                "noty",
+                "sweet-alert",
+                "sweet-alert2",
+                "toast"
+            ],
+            "time": "2020-03-31T15:40:35+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

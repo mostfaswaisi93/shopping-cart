@@ -38,6 +38,7 @@
             <form action="/charge" method="post" id="payment-form">
                 @csrf
                 <div class="">
+                    <input type="hidden" name="amount" value="{{ $amount}}">
                     <label for="card-element">
                         Credit or debit card
                     </label>
@@ -60,7 +61,7 @@
 <script src="https://js.stripe.com/v3/"></script>
 <script>
     window.onload = function() {
-            var stripe = Stripe('pk_test_G0t481J70g0ZAwj692IFAcPN');
+            var stripe = Stripe('pk_test_hmanAtjZTjJJZQjssulUz4e50087ycdmew');
             var elements = stripe.elements();
             var style = {
                 base: {
