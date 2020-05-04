@@ -10,13 +10,15 @@ class Cart extends Model
     public $totalQty;
     public $totalPrice;
 
-    public function __Constrcut($cart = null)
+    public function __Construct($cart = null)
     {
         if ($cart) {
+
             $this->items = $cart->items;
             $this->totalQty = $cart->totalQty;
             $this->totalPrice = $cart->totalPrice;
         } else {
+
             $this->items = [];
             $this->totalQty = 0;
             $this->totalPrice = 0;
@@ -25,7 +27,6 @@ class Cart extends Model
 
     public function add($product)
     {
-
         $item = [
             'title' => $product->title,
             'price' => $product->price,
@@ -38,6 +39,7 @@ class Cart extends Model
             $this->totalQty += 1;
             $this->totalPrice += $product->price;
         } else {
+
             $this->totalQty += 1;
             $this->totalPrice += $product->price;
         }

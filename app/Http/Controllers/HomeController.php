@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('store');
     }
 
     /**
@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function store()
     {
         $latestProducts = Product::latest()->take(3)->get();
-        
+
         return view('store', compact('latestProducts'));
     }
 }
