@@ -6,6 +6,16 @@
     <div class="row">
         @if($cart)
         <div class="col-md-8">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             @foreach( $cart->items as $product)
             <div class="card mb-2">
                 <div class="card-body">
@@ -14,9 +24,21 @@
                     </h5>
                     <div class="card-text">
                         ${{ $product['price'] }}
-                        <a href="#" class="btn btn-danger btn-sm ml-4">Remove</a>
-                        <input type="text" name="qty" id="qty" value={{ $product['qty']}}>
-                        <a href="#" class="btn btn-secondary btn-sm">Change</a>
+
+                        <form action="{{ route('product.update',$product['id'])}}" method="post">
+                            @csrf
+                            @method('put')
+                            <input type="text" name="qty" id="qty" value={{ $product['qty']}}>
+                            <button type="submit" class="btn btn-secondary btn-sm">Change</button>
+
+                        </form>
+
+                        <form action="{{ route('product.remove', $product['id'] )}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger btn-sm ml-4 float-right"
+                                style="margin-top: -30px;">Remove</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -39,7 +61,7 @@
                         <p>
                             Total Quantities is {{$cart->totalQty}}
                         </p>
-                        <a href="{{ route('cart.checkout', $cart->totalPrice)}}" class="btn btn-info">Checkout</a>
+                        <a href="{{ route('cart.checkout', $cart->totalPrice)}}" class="btn btn-success">Checkout</a>
                     </div>
                 </div>
             </div>
